@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc5nrioegiha5"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_w64tj"]
+[ext_resource type="AudioStream" uid="uid://ba4yiccee2o8a" path="res://001001.ogg" id="2_kwa1q"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( "1_w64tj" )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "2_kwa1q" )
+script = null
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="ready" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_ready"]
